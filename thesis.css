@@ -98,7 +98,6 @@ h2 {
 
 .quote {
   font-family: Henry-italic;
-  width: 80%;
 }
 
 .note {
@@ -184,6 +183,10 @@ canvas {
   font-size: 0.6em;
   margin-left: 2px;
   cursor: pointer;
+}
+
+.numbers:focus {
+    outline: none;
 }
 
 footer {
