@@ -66,6 +66,10 @@ h1 {
   top: -3px;
 }
 
+h1 {
+  line-height: 20px;
+}
+
 h2 {
   font-family: Henry-italic;
   text-transform: inherit;
@@ -173,8 +177,8 @@ canvas {
   top: 0;
   position: fixed;
   z-index: -1;
-  filter: blur(20px) infinite; /* W3C */
-  -webkit-filter: blur(20px) infinite;
+  filter: blur(5px) infinite; /* W3C */
+  -webkit-filter: blur(5px) infinite;
   -webkit-animation: canvas_blur 20s infinite;
 }
 
