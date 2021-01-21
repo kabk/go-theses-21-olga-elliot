@@ -6,13 +6,13 @@
 
 @font-face {
   font-family: Henry-italic;
-  src: url(fonts/HenryTrial-Italic.otf);
+  src: url(fonts/Henry-Italic.otf);
   font-weight: italic;
   }
 
 @font-face {
   font-family: Henry;
-  src: url(fonts/HenryTrial-Regular.otf);
+  src: url(fonts/Henry-Regular.otf);
 }
 
 i {
@@ -28,6 +28,10 @@ body {
 a {
   color: black;
   text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 h3, h2, h1 {
@@ -82,12 +86,35 @@ h2 {
   text-justify: auto;
   margin-left: 25%;
   position: relative;
+}
 
+.thesis p {
+  text-indent: 50px;
+}
+
+@media only screen and (max-width: 600px) {
+  .thesis {
+    width: 19%;
+    margin: 20px;
+    font-size: 28px;
+    line-height: 34px;
+
+  }
+
+  .note, .caption, .bib, .cred {
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
+
+.quote {
+    font-family: Henry-italic;
+    width: 80%;
 }
 
 .note {
-  width: 100px;
-  font-size: 12px;
+  width: 25%;
+  font-size: 14px;
   line-height: 16px;
   stroke: solid 1px;
   text-align: left;
@@ -95,15 +122,23 @@ h2 {
   margin: 0;
 }
 
-.caption {
+.caption, .bib, .cred {
   font-size: 14px;
   line-height: 16px;
+  text-align: left;
+}
+
+.bib p{
+  margin-left: 200px;
+  text-indent: -50px;
+  margin-right: 200px;
+  margin-top: 0px;
+  margin-bottom: 0;
 }
 
 img {
   max-height: 600px;
   max-width: 100%;
-  padding: 20px, 20px, 20px;
   -webkit-filter: grayscale(100%) !important;
   filter: grayscale(100%) !important;
 }
@@ -122,6 +157,95 @@ canvas {
 -webkit-animation: canvas_blur 20s infinite;
 }
 
+.numbers  {
+  vertical-align: super;
+  font-size: 0.5em;
+  margin-left: 2px;
+  cursor: pointer;
+}
+
+footer {
+  margin-top: 50px;
+  border-top: 1px solid silver;
+  font-size: 0.8em;
+}
+
+footer ol {
+  padding-left: 20px;
+}
+
+/**
+ * Initialiazing a `footnotes` counter on the wrapper
+ */
+article {
+  counter-reset: footnotes;
+}
+
+/**
+ * Inline footnotes references
+ * 1. Increment the counter at each new reference
+ * 2. Reset link styles to make it appear like regular text
+ */
+[aria-describedby="footnote-label"] {
+  counter-increment: footnotes; /* 1 */
+  text-decoration: none; /* 2 */
+  color: inherit; /* 2 */
+  cursor: default; /* 2 */
+  outline: none; /* 2 */
+}
+
+/**
+ * Actual numbered references
+ * 1. Display the current state of the counter (e.g. `[1]`)
+ * 2. Align text as superscript
+ * 3. Make the number smaller (since it's superscript)
+ * 4. Slightly offset the number from the text
+ * 5. Reset link styles on the number to show it's usable
+ */
+[aria-describedby="footnote-label"]::after {
+  content: '[' counter(footnotes) ']'; /* 1 */
+  vertical-align: super; /* 2 */
+  font-size: 0.5em; /* 3 */
+  margin-left: 2px; /* 4 */
+  color: blue; /* 5 */
+  text-decoration: underline; /* 5 */
+  cursor: pointer; /* 5 */
+}
+
+/**
+ * Resetting the default focused styles on the number
+ */
+[aria-describedby="footnote-label"]:focus::after {
+  outline: thin dotted;
+  outline-offset: 2px;
+}
+
+[aria-label="Back to content"] {
+  font-size: 0.8em;
+}
+
+/**
+ * Highlight target note
+ */
+footer :target {
+  background: yellow;
+}
+
+/**
+ * Visually hidden yet accessible content
+ */
+.visually-hidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  visibility: hidden;
+  opacity: 0;
+}
+
+.p {
+  text-align: center;
+  font-size: .75em;
+  padding-top: 150px;
+}
 
  @-webkit-keyframes canvas_blur {
   0% {
