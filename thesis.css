@@ -1,6 +1,5 @@
-
 * {
-  box-sizing:border-box;
+  box-sizing: border-box;
   font-family: "Henry";
 }
 
@@ -8,7 +7,7 @@
   font-family: Henry-italic;
   src: url(fonts/Henry-Italic.otf);
   font-weight: italic;
-  }
+}
 
 @font-face {
   font-family: Henry;
@@ -34,7 +33,9 @@ a:hover {
   text-decoration: underline;
 }
 
-h3, h2, h1 {
+h3,
+h2,
+h1 {
   text-transform: uppercase;
   font-weight: normal;
   text-align: center;
@@ -45,28 +46,30 @@ h3, h2, h1 {
   margin-top: 10%;
 }
 
-.header p {
-  right: 10px;
-  position: fixed;
-  text-transform: capitalize;
+.chapter-header, .header {
+  font-size: 14px;
+  line-height: 16px;
   letter-spacing: 1px;
-  top:10px;
+  top: 10px;
+  text-transform: uppercase;
 }
 
 .chapter-header {
-  font-size: 14px;
-  line-height: 16px;
-  margin-left: -45%;
   position: sticky;
-  text-transform: capitalize;
-  letter-spacing: 1px;
-  top:10px;
+  margin-left: -47%;
+}
+
+.header {
+  right: 5px;
+  position: fixed;
+  right: 5%;
+  top: -3px;
 }
 
 h2 {
-    font-family: Henry-italic;
-    text-transform: inherit;
-    letter-spacing: inherit;
+  font-family: Henry-italic;
+  text-transform: inherit;
+  letter-spacing: inherit;
 }
 
 .intro {
@@ -78,9 +81,9 @@ h2 {
   margin-left: 25%;
 }
 
-.thesis{
-  font-size: 18px;
-  line-height: 22px;
+.thesis {
+  font-size: 22px;
+  line-height: 25px;
   width: 50%;
   text-align: justify;
   text-justify: auto;
@@ -90,26 +93,12 @@ h2 {
 
 .thesis p {
   text-indent: 50px;
-}
-
-@media only screen and (max-width: 600px) {
-  .thesis {
-    width: 19%;
-    margin: 20px;
-    font-size: 28px;
-    line-height: 34px;
-
-  }
-
-  .note, .caption, .bib, .cred {
-    font-size: 18px;
-    line-height: 24px;
-  }
+  margin: 0;
 }
 
 .quote {
-    font-family: Henry-italic;
-    width: 80%;
+  font-family: Henry-italic;
+  width: 80%;
 }
 
 .note {
@@ -122,18 +111,51 @@ h2 {
   margin: 0;
 }
 
-.caption, .bib, .cred {
+.footnotes-mobile {
+  display: none;
+}
+
+.caption,
+.bib,
+.cred {
   font-size: 14px;
   line-height: 16px;
   text-align: left;
 }
 
-.bib p{
-  margin-left: 200px;
+.image p {
+  margin-top: 10px;
+  text-indent: 0px;
+}
+
+@media only screen and (max-width: 600px) {
+  .thesis {
+    width: 90%;
+    margin: 20px;
+    font-size: 28px;
+    line-height: 34px;
+  }
+
+  .note {
+    display: none;
+  }
+
+  .footnotes-mobile {
+    display: block;
+  }
+}
+
+.bib p {
+  margin-left: 100px;
   text-indent: -50px;
-  margin-right: 200px;
+  margin-right: 100px;
   margin-top: 0px;
   margin-bottom: 0;
+}
+
+.image{
+  text-align: center;
+  margin: 20px 0px 10px 0px;
 }
 
 img {
@@ -144,22 +166,22 @@ img {
 }
 
 img:hover {
-	-webkit-filter: grayscale(0) !important;
-	filter: grayscale(0) !important;
+  -webkit-filter: grayscale(0) !important;
+  filter: grayscale(0) !important;
 }
 
 canvas {
-  top: 20%;
+  top: 0;
   position: fixed;
   z-index: -1;
   filter: blur(20px) infinite; /* W3C */
--webkit-filter: blur(20px) infinite;
--webkit-animation: canvas_blur 20s infinite;
+  -webkit-filter: blur(20px) infinite;
+  -webkit-animation: canvas_blur 20s infinite;
 }
 
-.numbers  {
+.numbers {
   vertical-align: super;
-  font-size: 0.5em;
+  font-size: 0.6em;
   margin-left: 2px;
   cursor: pointer;
 }
@@ -203,7 +225,7 @@ article {
  * 5. Reset link styles on the number to show it's usable
  */
 [aria-describedby="footnote-label"]::after {
-  content: '[' counter(footnotes) ']'; /* 1 */
+  content: "[" counter(footnotes) "]"; /* 1 */
   vertical-align: super; /* 2 */
   font-size: 0.5em; /* 3 */
   margin-left: 2px; /* 4 */
@@ -243,18 +265,18 @@ footer :target {
 
 .p {
   text-align: center;
-  font-size: .75em;
+  font-size: 0.75em;
   padding-top: 150px;
 }
 
- @-webkit-keyframes canvas_blur {
+@-webkit-keyframes canvas_blur {
   0% {
-    -webkit-filter: blur(20px);
+    -webkit-filter: blur(15px);
   }
   50% {
-    -webkit-filter: blur(5px);
+    -webkit-filter: blur(2px);
   }
   100% {
-    -webkit-filter: blur(20px);
+    -webkit-filter: blur(15px);
   }
 }

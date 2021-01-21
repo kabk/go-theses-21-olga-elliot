@@ -25,13 +25,13 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(560, 800);
+  createCanvas(windowWidth, windowHeight);
   background(255);
   stroke(15);
 
-  // Button to reset drawing
-  let button = createButton('clear');
-  button.mousePressed(startDrawing);
+  // // Button to reset drawing
+  // let button = createButton('clear');
+  // button.mousePressed(startDrawing);
 
   // run sketchRNN
   startDrawing();
@@ -75,6 +75,10 @@ function draw() {
     }
   }
 }
+
+setInterval(() => {
+  startDrawing();
+}, 20000)
 
 
 
