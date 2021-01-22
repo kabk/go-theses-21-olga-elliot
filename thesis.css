@@ -37,17 +37,15 @@ a:hover {
   text-decoration: underline;
 }
 
-h3,
-h2,
-{
-  text-transform: uppercase;
-  font-weight: normal;
-  text-align: center;
-  letter-spacing: 3px;
+.chapter-header + h3 {
+  text-transform: uppercase !important;
+  font-weight: normal !important;
+  text-align: center !important;
+  letter-spacing: 3px !important;
 }
 
 #title {
-  margin-top: 8rem;
+  margin-top: 10rem;
   text-align: center;
   font-size: 44px;
   line-height: 50px;
@@ -115,7 +113,7 @@ article {
 }
 
 #landing {
-  height: 50%;
+  height: 80%;
 }
 
 .chapter-header, .header {
@@ -124,10 +122,15 @@ article {
 }
 
 .chapter-header {
+  margin: none;
   position: sticky;
   left: 2rem;
   font-size: 22px;
   line-height: 25px;
+}
+
+.chapter-header a {
+  text-decoration: none;
 }
 
 .header {
@@ -327,11 +330,15 @@ footer :target {
     display: none;
   }
 
+  #landing {
+    height: 50%;
+  }
+
   #title {
     margin: 5rem 1rem 0rem 1rem;
     text-align: center;
-    font-size: 52px;
-    line-height: 50px;
+    font-size: 35px;
+    line-height: 40px;
   }
 
   #abstract {
