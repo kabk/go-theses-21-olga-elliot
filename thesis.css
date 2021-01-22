@@ -72,31 +72,41 @@ header {
   transition: background-color 0.5s ease;
 }
 
+article {
+  width: 50%;
+  margin-left: 25%;
+}
+
 #sub-menu, #menu {
-  position: fixed;
-  right: 2rem;
+  position: sticky;
   top: 1rem;
-  z-index: 1000;
 }
 
 #menu {
+  float:right;
   font-family: Henry-italic;
   border: none;
   background-color: inherit;
   font-size: 1rem;
   font-size: 22px;
   line-height: 25px;
-  margin: none;
+  z-index: 1001;
 }
 
 #sub-menu {
+  padding: 0;
+  -webkit-padding-start: 0;
+  list-style-type: none;
+  list-style: none;
   display: none;
   margin-top: 2rem;
-  list-style: none;
   font-size: 14px;
   line-height: 16px;
   text-transform: uppercase;
   letter-spacing: 3px;
+  box-shadow: rgb(255, 255, 255) 0px 0px 1rem 1rem;
+  background-color: rgb(255, 255, 255);
+  z-index: 1000;
 }
 
 #sub-menu li {
@@ -144,10 +154,8 @@ header {
 .intro {
   font-size: 33px;
   line-height: 37px;
-  width: 50%;
   text-align: justify;
   text-justify: auto;
-  margin-left: 25%;
 }
 
 #methods, #language, #author {
@@ -158,10 +166,8 @@ header {
 .thesis {
   font-size: 22px;
   line-height: 25px;
-  width: 50%;
   text-align: justify;
   text-justify: auto;
-  margin-left: 25%;
   position: relative;
 }
 
@@ -196,6 +202,11 @@ header {
   font-size: 14px;
   line-height: 16px;
   text-align: left;
+}
+
+.cred p {
+  text-indent: 0;
+  margin: 0.5rem 0 0 0;
 }
 
 .image p {
@@ -249,13 +260,6 @@ footer {
 
 footer ol {
   padding-left: 20px;
-}
-
-/**
- * Initialiazing a `footnotes` counter on the wrapper
- */
-article {
-  counter-reset: footnotes;
 }
 
 /**
@@ -335,11 +339,9 @@ footer :target {
     line-height: 25px;
   }
 
-  .thesis, .intro {
+  article {
     width: 90%;
     margin: 1em;
-    font-style: 1rem;
-    line-height: inherit;
   }
 
   .note {
@@ -352,7 +354,7 @@ footer :target {
 
   img:active {-webkit-filter: grayscale(0) !important;
   filter: grayscale(0) !important;
-}
+  }
 }
 
 @-webkit-keyframes canvas_blur {

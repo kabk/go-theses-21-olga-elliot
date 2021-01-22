@@ -1,10 +1,10 @@
 
 function showIndex() {
   var x = document.getElementById("sub-menu");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
+  if (x.style.display === "inline-block") {
     x.style.display = "none";
+  } else {
+    x.style.display = "inline-block";
   }
 }
 
