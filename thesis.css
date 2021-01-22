@@ -59,13 +59,32 @@ header {
   transition: all 1s ease-in-out;
 }
 
-.menu {
+#sub-menu, #menu {
   position: fixed;
   right: 2rem;
+}
+
+#menu {
   font-family: Henry-italic;
+  border: none;
+  background-color: inherit;
   font-size: 1rem;
   font-size: 22px;
   line-height: 25px;
+}
+
+#sub-menu {
+  margin-top: 2rem;
+  list-style: none;
+  font-size: 14px;
+  line-height: 16px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+#sub-menu li {
+    text-align: center;
+    padding: 0.5rem;
 }
 
 .chapter-header, .header {
@@ -87,6 +106,16 @@ header {
   line-height: 16px;
   text-transform: uppercase;
   letter-spacing: 3px;
+}
+
+.header a:hover {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.header i {
+  text-transform: none;
+  letter-spacing: 0px;
 }
 
 h1 {

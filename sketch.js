@@ -1,12 +1,12 @@
-// Copyright (c) 2019 ml5
-//
-// This software is released under the MIT License.
-// https://opensource.org/licenses/MIT
 
-/* ===
-ml5 Example
-SketchRNN
-=== */
+function showIndex() {
+  var x = document.getElementById("sub-menu");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
 
 
 // The SketchRNN model
