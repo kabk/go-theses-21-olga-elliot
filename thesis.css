@@ -75,6 +75,8 @@ header {
 #sub-menu, #menu {
   position: fixed;
   right: 2rem;
+  top: 1rem;
+  z-index: 1000;
 }
 
 #menu {
@@ -139,16 +141,6 @@ header {
   letter-spacing: 0px;
 }
 
-h1 {
-  line-height: 20px;
-}
-
-h2 {
-  font-family: Henry-italic;
-  text-transform: inherit;
-  letter-spacing: inherit;
-}
-
 .intro {
   font-size: 33px;
   line-height: 37px;
@@ -156,6 +148,11 @@ h2 {
   text-align: justify;
   text-justify: auto;
   margin-left: 25%;
+}
+
+#methods, #language, #author {
+  font-size: 22px;
+  line-height: 25px;
 }
 
 .thesis {
@@ -206,36 +203,9 @@ h2 {
   text-indent: 0px;
 }
 
-@media only screen and (max-width: 600px) {
-  #title {
-    margin: 5rem 1rem 0rem 1rem;
-    text-align: center;
-    font-size: 52px;
-    line-height: 50px;
-  }
-
-  .thesis, .intro {
-    width: 90%;
-    margin: 1em;
-    font-size: 28px;
-    line-height: 34px;
-  }
-
-  .note {
-    display: none;
-  }
-
-  .footnotes-mobile {
-    display: block;
-  }
-}
-
 .bib p {
-  margin-left: 100px;
-  text-indent: -50px;
-  margin-right: 100px;
-  margin-top: 0px;
-  margin-bottom: 0;
+  text-indent: -2rem;
+  margin: 0.5rem 0 0 2rem;
 }
 
 .image{
@@ -347,10 +317,42 @@ footer :target {
   opacity: 0;
 }
 
-.p {
-  text-align: center;
-  font-size: 0.75em;
-  padding-top: 150px;
+@media only screen and (max-width: 600px) {
+
+  #header-title {
+    display: none;
+  }
+
+  #title {
+    margin: 5rem 1rem 0rem 1rem;
+    text-align: center;
+    font-size: 52px;
+    line-height: 50px;
+  }
+
+  #abstract {
+    font-size: 22px;
+    line-height: 25px;
+  }
+
+  .thesis, .intro {
+    width: 90%;
+    margin: 1em;
+    font-style: 1rem;
+    line-height: inherit;
+  }
+
+  .note {
+    display: none;
+  }
+
+  .footnotes-mobile {
+    display: block;
+  }
+
+  img:active {-webkit-filter: grayscale(0) !important;
+  filter: grayscale(0) !important;
+}
 }
 
 @-webkit-keyframes canvas_blur {
