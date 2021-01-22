@@ -3,6 +3,10 @@
   font-family: "Henry";
 }
 
+*:focus {
+  outline: none;
+}
+
 @font-face {
   font-family: Henry-italic;
   src: url(fonts/Henry-Italic.otf);
@@ -35,7 +39,7 @@ a:hover {
 
 h3,
 h2,
-h1 {
+{
   text-transform: uppercase;
   font-weight: normal;
   text-align: center;
@@ -43,7 +47,16 @@ h1 {
 }
 
 #title {
-  margin-top: 10%;
+  margin-top: 8rem;
+  text-align: center;
+  font-size: 44px;
+  line-height: 50px;
+}
+
+#title p {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
 }
 
 header {
@@ -56,7 +69,7 @@ header {
   top: 0;
   left: 0;
   z-index: 11;
-  transition: all 1s ease-in-out;
+  transition: background-color 0.5s ease;
 }
 
 #sub-menu, #menu {
@@ -71,9 +84,11 @@ header {
   font-size: 1rem;
   font-size: 22px;
   line-height: 25px;
+  margin: none;
 }
 
 #sub-menu {
+  display: none;
   margin-top: 2rem;
   list-style: none;
   font-size: 14px;
@@ -87,6 +102,10 @@ header {
     padding: 0.5rem;
 }
 
+#landing {
+  height: 50%;
+}
+
 .chapter-header, .header {
   top: 1rem;
   z-index: 110;
@@ -94,7 +113,9 @@ header {
 
 .chapter-header {
   position: sticky;
-  margin-left: -47%;
+  left: 2rem;
+  font-size: 22px;
+  line-height: 25px;
 }
 
 .header {
@@ -129,8 +150,8 @@ h2 {
 }
 
 .intro {
-  font-size: 28px;
-  line-height: 34px;
+  font-size: 33px;
+  line-height: 37px;
   width: 50%;
   text-align: justify;
   text-justify: auto;
@@ -168,6 +189,8 @@ h2 {
 
 .footnotes-mobile {
   display: none;
+  font-size: 0.7rem;
+  line-height: 1rem;
 }
 
 .caption,
@@ -184,9 +207,16 @@ h2 {
 }
 
 @media only screen and (max-width: 600px) {
-  .thesis {
+  #title {
+    margin: 5rem 1rem 0rem 1rem;
+    text-align: center;
+    font-size: 52px;
+    line-height: 50px;
+  }
+
+  .thesis, .intro {
     width: 90%;
-    margin: 20px;
+    margin: 1em;
     font-size: 28px;
     line-height: 34px;
   }
@@ -241,10 +271,6 @@ canvas {
   cursor: pointer;
 }
 
-.numbers:focus {
-    outline: none;
-}
-
 footer {
   margin-top: 50px;
   border-top: 1px solid silver;
@@ -272,7 +298,6 @@ article {
   text-decoration: none; /* 2 */
   color: inherit; /* 2 */
   cursor: default; /* 2 */
-  outline: none; /* 2 */
 }
 
 /**
