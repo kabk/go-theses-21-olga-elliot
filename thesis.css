@@ -45,7 +45,7 @@ a:hover {
 }
 
 #title {
-  margin-top: 10rem;
+  margin: 5rem 1rem 0rem 1rem;
   text-align: center;
   font-size: 44px;
   line-height: 50px;
@@ -75,13 +75,10 @@ article {
   margin-left: 25%;
 }
 
-#sub-menu, #menu {
-  position: sticky;
-  top: 1rem;
-}
-
 #menu {
   float:right;
+  position: sticky;
+  top: 1rem;
   font-family: Henry-italic;
   border: none;
   background-color: inherit;
@@ -89,15 +86,19 @@ article {
   font-size: 22px;
   line-height: 25px;
   z-index: 1001;
+  margin-right: -47%;
 }
+
 
 #sub-menu {
   padding: 0;
+  position: fixed;
+  top: 2rem;
   -webkit-padding-start: 0;
   list-style-type: none;
   list-style: none;
   display: none;
-  margin-top: 2rem;
+  margin: 2rem 2rem 0 0.7rem;
   font-size: 14px;
   line-height: 16px;
   text-transform: uppercase;
@@ -113,45 +114,21 @@ article {
 }
 
 #landing {
-  height: 80%;
-}
-
-.chapter-header, .header {
-  top: 1rem;
-  z-index: 110;
+  height: 50%;
 }
 
 .chapter-header {
-  margin: none;
+  top: 1rem;
+  z-index: 110;
   position: sticky;
   left: 2rem;
   font-size: 22px;
   line-height: 25px;
+  margin-left: -47%;
 }
 
 .chapter-header a {
   text-decoration: none;
-}
-
-.header {
-  height: 2rem;
-  position: sticky;
-  text-align: center;
-  width: 100%;
-  font-size: 14px;
-  line-height: 16px;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-}
-
-.header a:hover {
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.header i {
-  text-transform: none;
-  letter-spacing: 0px;
 }
 
 .intro {
@@ -265,80 +242,38 @@ footer ol {
   padding-left: 20px;
 }
 
-/**
- * Inline footnotes references
- * 1. Increment the counter at each new reference
- * 2. Reset link styles to make it appear like regular text
- */
-[aria-describedby="footnote-label"] {
-  counter-increment: footnotes; /* 1 */
-  text-decoration: none; /* 2 */
-  color: inherit; /* 2 */
-  cursor: default; /* 2 */
-}
-
-/**
- * Actual numbered references
- * 1. Display the current state of the counter (e.g. `[1]`)
- * 2. Align text as superscript
- * 3. Make the number smaller (since it's superscript)
- * 4. Slightly offset the number from the text
- * 5. Reset link styles on the number to show it's usable
- */
-[aria-describedby="footnote-label"]::after {
-  content: "[" counter(footnotes) "]"; /* 1 */
-  vertical-align: super; /* 2 */
-  font-size: 0.5em; /* 3 */
-  margin-left: 2px; /* 4 */
-  color: blue; /* 5 */
-  text-decoration: underline; /* 5 */
-  cursor: pointer; /* 5 */
-}
-
-/**
- * Resetting the default focused styles on the number
- */
-[aria-describedby="footnote-label"]:focus::after {
-  outline: thin dotted;
-  outline-offset: 2px;
-}
-
-[aria-label="Back to content"] {
-  font-size: 0.8em;
-}
-
-/**
- * Highlight target note
- */
 footer :target {
   background: yellow;
 }
 
-/**
- * Visually hidden yet accessible content
- */
-.visually-hidden {
-  position: absolute;
-  clip: rect(0 0 0 0);
-  visibility: hidden;
-  opacity: 0;
+#tiki {
+  text-decoration: underline;
 }
 
-@media only screen and (max-width: 600px) {
+#tiki + img{
+  display: none;
+  -webkit-filter: grayscale(0) !important;
+  filter: grayscale(0) !important;
+}
 
-  #header-title {
-    display: none;
+
+#tiki:hover + img{
+    left:30%;
+    display: block;
+    width: 150px;
+    min-height: 200px;
+    z-index: 1110;
+    position: absolute;
   }
+
+@media only screen and (max-width: 600px) {
 
   #landing {
     height: 50%;
   }
 
-  #title {
-    margin: 5rem 1rem 0rem 1rem;
-    text-align: center;
-    font-size: 35px;
-    line-height: 40px;
+  #menu, .chapter-header {
+    margin: 0;
   }
 
   #abstract {
@@ -359,7 +294,8 @@ footer :target {
     display: block;
   }
 
-  img:active {-webkit-filter: grayscale(0) !important;
+  img:active {
+  -webkit-filter: grayscale(0) !important;
   filter: grayscale(0) !important;
   }
 }
