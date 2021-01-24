@@ -44,6 +44,15 @@ a:hover {
   letter-spacing: 3px !important;
 }
 
+.info {
+  z-index: 10000;
+  position: absolute;
+  width: 100%;
+  font-size: 16px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
 #title {
   margin: 5rem 1rem 0rem 1rem;
   text-align: center;
@@ -246,6 +255,10 @@ footer :target {
   background: yellow;
 }
 
+.active, footer:hover {
+  background-color: #555;
+}
+
 #tiki {
   text-decoration: underline;
 }
@@ -292,6 +305,7 @@ footer :target {
 
   .footnotes-mobile {
     display: block;
+    transition: display 0.2s ease-out;
   }
 
   img:active {

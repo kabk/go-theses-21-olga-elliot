@@ -81,7 +81,6 @@ setInterval(() => {
 }, 20000)
 
 
-
 // A new stroke path
 function gotStroke(err, s) {
   strokePath = s;
