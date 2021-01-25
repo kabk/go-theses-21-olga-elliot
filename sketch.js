@@ -70,7 +70,7 @@ function draw() {
 
 setInterval(() => {
   startDrawing();
-}, 15000)
+}, 20000)
 
 
 // A new stroke path
