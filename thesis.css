@@ -22,6 +22,7 @@ i {
 }
 
 body {
+  scroll-behavior: smooth;
   margin: 0;
   padding: 0;
   -webkit-font-smoothing: antialiased;
@@ -45,14 +46,21 @@ a:hover {
   letter-spacing: 3px !important;
 }
 
+footer .chapter-header {
+  display:none;
+}
+
 .info {
-  z-index: 10000;
   position: absolute;
   width: 100%;
   font-size: 16px;
   text-transform: uppercase;
   text-align: center;
   letter-spacing: 3px;
+  animation: fadein 2s;
+  -moz-animation: fadein 2s; /* Firefox */
+  -webkit-animation: fadein 2s; /* Safari and Chrome */
+  -o-animation: fadein 2s; /* Opera */
 }
 
 #title {
@@ -60,6 +68,8 @@ a:hover {
   text-align: center;
   font-size: 44px;
   line-height: 50px;
+  -webkit-animation: title_blur 3s;
+  animation-iteration-count: 1;
 }
 
 #title p {
@@ -125,10 +135,11 @@ article {
 }
 
 #landing {
-  height: 50%;
+  height: 46%;
 }
 
 .chapter-header {
+  padding: 0;
   top: 1rem;
   z-index: 110;
   position: sticky;
@@ -172,19 +183,20 @@ article {
 }
 
 .note {
-  width: 25%;
+  width: 26%;
   font-size: 14px;
   line-height: 16px;
   stroke: solid 1px;
   text-align: left;
   display: inline-block;
   margin: 0;
+  text-indent: -1em;
 }
 
 .footnotes-mobile {
   display: none;
   font-size: 0.7rem;
-  line-height: 1rem;
+  line-height: 1.2em;
 }
 
 .caption,
@@ -225,12 +237,16 @@ img {
 img:hover {
   -webkit-filter: grayscale(0) !important;
   filter: grayscale(0) !important;
+  transition: 0.6s ease;
 }
 
-canvas {
+#mermaid-one {
   top: 0;
   position: fixed;
   z-index: -1;
+}
+
+canvas {
   filter: blur(5px) infinite; /* W3C */
   -webkit-filter: blur(5px) infinite;
   -webkit-animation: canvas_blur 20s infinite;
@@ -254,15 +270,13 @@ footer ol {
 }
 
 footer :target {
-  background: yellow;
-}
-
-.active, footer:hover {
-  background-color: #555;
+  box-shadow: #999 0px 0px 1rem 1rem;
+  background-color: #999;
 }
 
 .bib :target {
-  background: yellow;
+  box-shadow: #999 0px 0px 1rem 1rem;
+  background-color: #999;
 }
 
 #tiki {
@@ -275,7 +289,6 @@ footer :target {
   filter: grayscale(0) !important;
 }
 
-
 #tiki:hover + img{
     left:30%;
     display: block;
@@ -285,11 +298,29 @@ footer :target {
     position: absolute;
   }
 
+  #back2Top {
+    width: 40px;
+    overflow: hidden;
+    z-index: 999;
+    display: none;
+    cursor: pointer;
+    position: fixed;
+    bottom: 50px;
+    background-color: #DDD;
+    color: #555;
+    text-align: center;
+}
+
 @media only screen and (max-width: 600px) {
 
   #landing {
-    height: 50%;
-  }
+    height: 10%;
+}
+
+#title {
+  font-size: 1.7em;
+  line-height: 1.2em;
+}
 
   #menu, .chapter-header {
     margin: 0;
@@ -317,6 +348,7 @@ footer :target {
   img:active {
   -webkit-filter: grayscale(0) !important;
   filter: grayscale(0) !important;
+  transition: 0.6s ease;
   }
 }
 
@@ -329,5 +361,52 @@ footer :target {
   }
   100% {
     -webkit-filter: blur(15px);
+  }
+}
+
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-moz-keyframes fadein { /* Firefox */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-webkit-keyframes fadein { /* Safari and Chrome */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-o-keyframes fadein { /* Opera */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes title_blur {
+  0% {
+    -webkit-filter: blur(6px);
+  }
+
+  50% {
+      -webkit-filter: blur(2px);
+  }
+
+  100% {
+    -webkit-filter: blur(0px);
   }
 }
