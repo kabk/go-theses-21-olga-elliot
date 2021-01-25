@@ -1,6 +1,5 @@
 * {
   box-sizing: border-box;
-  font-family: "Henry";
 }
 
 *:focus {
@@ -8,24 +7,26 @@
 }
 
 @font-face {
-  font-family: Henry-italic;
-  src: url(fonts/Henry-Italic.otf);
-  font-weight: italic;
+  font-family: H-italic;
+  src: url(fonts/tf-Italic.otf);
 }
 
 @font-face {
-  font-family: Henry;
-  src: url(fonts/Henry-Regular.otf);
+  font-family: H;
+  src: url(fonts/tf-regular.otf);
 }
 
 i {
-  font-family: Henry-italic;
+  font-family: H-italic;
   font-style: normal;
 }
 
 body {
   margin: 0;
   padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: "H";
 }
 
 a {
@@ -51,6 +52,7 @@ a:hover {
   font-size: 16px;
   text-transform: uppercase;
   text-align: center;
+  letter-spacing: 3px;
 }
 
 #title {
@@ -88,7 +90,7 @@ article {
   float:right;
   position: sticky;
   top: 1rem;
-  font-family: Henry-italic;
+  font-family: H-Italic;
   border: none;
   background-color: inherit;
   font-size: 1rem;
@@ -166,7 +168,7 @@ article {
 }
 
 .quote {
-  font-family: Henry-italic;
+  font-family: H-Italic;
 }
 
 .note {
@@ -257,6 +259,10 @@ footer :target {
 
 .active, footer:hover {
   background-color: #555;
+}
+
+.bib :target {
+  background: yellow;
 }
 
 #tiki {
