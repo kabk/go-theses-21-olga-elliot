@@ -346,6 +346,10 @@ footer :target {
   line-height: 1.2em;
 }
 
+footer .chapter-header {
+  display:inline-block;
+}
+
   #menu, .chapter-header {
     margin: 0;
   }
