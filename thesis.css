@@ -120,8 +120,8 @@ article {
   list-style: none;
   display: none;
   margin: 2rem 2rem 0 0.7rem;
-  font-size: 14px;
-  line-height: 16px;
+  font-size: 16px;
+  line-height: 18px;
   text-transform: uppercase;
   letter-spacing: 3px;
   box-shadow: rgb(255, 255, 255) 0px 0px 1rem 1rem;
@@ -136,7 +136,7 @@ article {
 
 #landing {
   height: 46%;
-  -webkit-animation: landing 3s 3s ease-out;
+  -webkit-animation: landing 3s 1s ease-out;
   -webkit-animation-fill-mode: forwards;
   }
 
@@ -382,14 +382,52 @@ footer .chapter-header {
 
 @media screen and (min-width: 1600px) {
  article {
-   width: 40%;
+   margin-left: 35%;
+   width: 35%;
  }
 
  #title {
-   font-size: 3.4em;
-   line-height: 2.4em;
+   font-size: 5em;
+   line-height: 1em;
  }
-  
+
+ canvas {
+   width: 300%;
+   height: 300%;
+ }
+
+#abstract {
+  font-size: 1.5em;
+  line-height: 1.1em;
+}
+
+#sub-menu {
+  width: 34%;
+}
+
+.intro, .thesis {
+  font-size: 1.5em;
+  line-height: 1.2em;
+}
+
+img {
+max-height: 90%;
+
+}
+
+.note {
+  width: 20%;
+}
+
+#menu {
+  margin-right: -80%;
+}
+
+.chapter-header {
+  margin-left: -95%;
+}
+
+
 }
 
 
